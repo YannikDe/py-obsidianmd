@@ -43,6 +43,11 @@ class Note:
     def __repr__(self) -> str:
         return f'Note (path: "{self.path}")\n'
 
+    @property
+    def name(self) -> str:
+        """Returns the name of the note (filename without the .md extension)."""
+        return self.path.stem
+
     def append(self, str_append: str, allow_repeat: bool = False):
         """Appends text to the note content.
 
